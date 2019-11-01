@@ -5,15 +5,28 @@ import Searchbar from './input-text.js';
 
 const worklist = ['Enter your dream location', 'Why not...Tokyo?', 'Melbourne?', 'Sydney?'];
 
-class NewComponent extends React.Component{
-  render(){
-    return (
-      <div className={Style.credit}>
-      <a style={{backgroundColor: 'black', color: 'white', textDecoration: 'none', padding: '4px 6px', fontFamily: '-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif', fontSize: '12px', fontWeight: 'bold', lineHeight: '1.2', display: 'inline-block', borderRadius: '3px'}} href="https://unsplash.com/@seefromthesky?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Ishan @seefromthesky"><span style={{display: 'inline-block', padding: '2px 3px'}}><svg xmlns="http://www.w3.org/2000/svg" style={{height: '12px', width: 'auto', position: 'relative', verticalAlign: 'middle', top: '-2px', fill: 'white'}} viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" /></svg></span><span style={{display: 'inline-block', padding: '2px 3px'}}>Ishan @seefromthesky</span></a>
-      </div>
-    );
+const serialize = function (form) {
+  // Setup our serialized data
+  var serialized = [];
+  // Loop through each field in the form
+  for (var i = 0; i < form.elements.length; i++) {
+    var field = form.elements[i];
+    // Don't serialize fields without a name, submits, buttons, file and reset inputs, and disabled fields
+    if (!field.name || field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') continue;
+    // If a multi-select, get all selections
+    if (field.type === 'select-multiple') {
+      for (var n = 0; n < field.options.length; n++) {
+        if (!field.options[n].selected) continue;
+        serialized.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.options[n].value));
+      }
+    }
+    // Convert field data to a query string
+    else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
+      serialized.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value));
+    }
   }
-}
+  return serialized.join('&');
+};
 
 
 class App extends React.Component{
@@ -27,28 +40,6 @@ class App extends React.Component{
       <div className={Style.container}>
       <form className={Style.container} onSubmit={(e)=>{
         e.preventDefault();
-        const serialize = function (form) {
-          // Setup our serialized data
-          var serialized = [];
-          // Loop through each field in the form
-          for (var i = 0; i < form.elements.length; i++) {
-            var field = form.elements[i];
-            // Don't serialize fields without a name, submits, buttons, file and reset inputs, and disabled fields
-            if (!field.name || field.disabled || field.type === 'file' || field.type === 'reset' || field.type === 'submit' || field.type === 'button') continue;
-            // If a multi-select, get all selections
-            if (field.type === 'select-multiple') {
-              for (var n = 0; n < field.options.length; n++) {
-                if (!field.options[n].selected) continue;
-                serialized.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.options[n].value));
-              }
-            }
-            // Convert field data to a query string
-            else if ((field.type !== 'checkbox' && field.type !== 'radio') || field.checked) {
-              serialized.push(encodeURIComponent(field.name) + "=" + encodeURIComponent(field.value));
-            }
-          }
-          return serialized.join('&');
-        };
         var form = e.target;
         var formData = serialize(form);
         var togo = formData.split('=')
@@ -91,11 +82,12 @@ class App extends React.Component{
       }
       </form>
       </div>
-      <NewComponent/>
+      <div className={Style.credit}>
+      <a style={{backgroundColor: 'black', color: 'white', textDecoration: 'none', padding: '4px 6px', fontFamily: '-apple-system, BlinkMacSystemFont, "San Francisco", "Helvetica Neue", Helvetica, Ubuntu, Roboto, Noto, "Segoe UI", Arial, sans-serif', fontSize: '12px', fontWeight: 'bold', lineHeight: '1.2', display: 'inline-block', borderRadius: '3px'}} href="https://unsplash.com/@seefromthesky?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Ishan @seefromthesky"><span style={{display: 'inline-block', padding: '2px 3px'}}><svg xmlns="http://www.w3.org/2000/svg" style={{height: '12px', width: 'auto', position: 'relative', verticalAlign: 'middle', top: '-2px', fill: 'white'}} viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z" /></svg></span><span style={{display: 'inline-block', padding: '2px 3px'}}>Ishan @seefromthesky</span></a>
+      </div>
       </div>
     );
   }
 }
 
 export default App;
-//    <NewComponent/>

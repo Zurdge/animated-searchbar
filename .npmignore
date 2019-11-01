@@ -1,0 +1,8 @@
+.git
+node_modules
+public
+resources.ignore
+src
+demo
+.babelrc
+webpack.config.js

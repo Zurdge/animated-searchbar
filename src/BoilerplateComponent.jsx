@@ -95,7 +95,7 @@ class App extends React.Component{
     return (
       <input
         ref={(r)=>{this.element = r}}
-        className={this.props.className || Style.default}
+        className={this.props.className || Style.input}
         type="text"
         name={this.props.name || 'AnimatedSearchbar'}
         autoComplete={this.props.autocomplete || 'AnimatedSearchbar'}
