@@ -2,10 +2,10 @@ var path = require('path');
 
 module.exports = {
     mode: 'production',
-    entry: './src/input-text.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve('lib'),
-        filename: 'input-text.js',
+        filename: 'index.html',
         libraryTarget: 'commonjs2'
     },
     module: {
