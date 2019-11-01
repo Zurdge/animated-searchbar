@@ -5,7 +5,7 @@ https://zurdge.github.io/animated-searchbar/
 
 ## Install via NPM
 npm i animated-searchbar
-
+```
 <Searchbar
   name={'WhereToGo'} //Field name of search bar
   className={Style.input} // Classname for styling
@@ -21,3 +21,4 @@ npm i animated-searchbar
   onFocus={(e)=>{}} //
   onBlur={(e)=>{}} //
 />
+```
