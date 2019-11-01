@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/animated-searchbar/static/css/main.f2fe56eb.chunk.css",
+    "main.js": "/animated-searchbar/static/js/main.05705c58.chunk.js",
+    "main.js.map": "/animated-searchbar/static/js/main.05705c58.chunk.js.map",
+    "runtime-main.js": "/animated-searchbar/static/js/runtime-main.77c665b9.js",
+    "runtime-main.js.map": "/animated-searchbar/static/js/runtime-main.77c665b9.js.map",
+    "static/js/2.2f2405ee.chunk.js": "/animated-searchbar/static/js/2.2f2405ee.chunk.js",
+    "static/js/2.2f2405ee.chunk.js.map": "/animated-searchbar/static/js/2.2f2405ee.chunk.js.map",
+    "index.html": "/animated-searchbar/index.html",
+    "precache-manifest.06a8fe3e756c7e48c768c665197636e5.js": "/animated-searchbar/precache-manifest.06a8fe3e756c7e48c768c665197636e5.js",
+    "service-worker.js": "/animated-searchbar/service-worker.js",
+    "static/css/main.f2fe56eb.chunk.css.map": "/animated-searchbar/static/css/main.f2fe56eb.chunk.css.map",
+    "static/media/background.jpg": "/animated-searchbar/static/media/background.2831fb72.jpg",
+    "static/media/searchicon.png": "/animated-searchbar/static/media/searchicon.c3ae75fd.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.77c665b9.js",
+    "static/js/2.2f2405ee.chunk.js",
+    "static/css/main.f2fe56eb.chunk.css",
+    "static/js/main.05705c58.chunk.js"
+  ]
+}
