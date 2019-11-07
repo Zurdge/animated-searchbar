@@ -1,6 +1,6 @@
 {
-  "name": "animated-sarchbar",
-  "version": "2.2.0",
+  "name": "animated-searchbar",
+  "version": "2.2.2",
   "private": false,
   "dependencies": {
     "aos": "^2.3.4",
@@ -17,6 +17,16 @@
     "eject": "react-scripts eject"
   },
   "homepage": "http://zurdge.github.io/animated-searchbar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zurdge/animated-searchbar"
+  },
+  "keywords": ["Animated Searchbar", "ReactJS", "Zurdge", "Animated Placeholder"],
+    "author": "James Edward Burdge",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Zurdge/animated-searchbar/issues"
+    },
   "eslintConfig": {
     "extends": "react-app"
   },
